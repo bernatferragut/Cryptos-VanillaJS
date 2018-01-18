@@ -40,6 +40,19 @@ person2.greet();
 
 // 3. constructor functions
 
+function Person(name,age) {
+    this.name = name;
+    this.age = age;
+    this.greet = function() {
+        console.log(this.name + " is " + this.age);
+    }
+}
 
+let bernat = new Person("Bernat Ferragut", 43);
+bernat.greet();
+
+let llorenc = new Person("Llorenc Ferragut", 36);
+llorenc.greet();
 
 // 4. classes
+
