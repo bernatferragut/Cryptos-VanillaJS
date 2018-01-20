@@ -1,38 +1,44 @@
-// JS 2
-console.log("THIS IS A TEST!");
+// JS
+console.log("JS Working...");
 
-// selections
-let myTitle = document.getElementById("mainTitle");
-let myButton = document.getElementById("button");
-let myList = document.getElementById("myList");
-let myListItems = document.getElementById("myList").getElementsByTagName("li");
-let newItemCounter = myListItems.length;
+// Crypto Object => Crypto
+function Crypto(name, symbol, value) {
+    // atributes
+    this.name = name;
+    this.symbol = symbol;
+    this.value = value;
 
-// Changing All Collection Items Texts
-// for(let i=0; i<myListItems.length; i++){
-//     myListItems[i].innerHTML = "CRYPTO " + (i+1);
-//     myListItems[i].addEventListener('click', activateItem);
-// }
-
-myList.addEventListener("click", activateItem);
-
-// Adding Items
-myButton.addEventListener('click', addListItem);
-
-// Functions
-function activateItem(e) {
-    if(e.target.nodeName == "LI") {
-        myTitle.innerHTML = e.target.innerHTML;
-        for(let i=0; i<e.target.parentNode.children.length; i++){
-            e.target.parentNode.children[i].classList.remove("red");
-        }
-        e.target.classList.add("red");
-    }
+    // methods
+    this.showName = function() {
+        console.log(this.name);
+    };
+    this.showSymbol = function() {
+        console.log(this.symbol);
+    };
+    this.showValue = function() {
+        console.log(this.value);
+    };
 }
 
-function addListItem() {
-    newItemCounter ++;
-    myList.innerHTML += "<li>Crypto " + newItemCounter + "</li>" 
-}
+// Cryptos Creation
+let crypto1 = new Crypto('Bitcoin', 'BTC', 13000);
+let crypto2 = new Crypto('Eos', 'EOS', 15);
+let crypto3 = new Crypto('Iota', 'IOT', 5);
 
+// Example Crypto Ouput
+console.log('********')
+crypto1.showName();
+crypto1.showSymbol();
+crypto1.showValue();
+console.log('========')
+crypto2.showName();
+crypto2.showSymbol();
+crypto2.showValue();
+console.log('========')
+crypto3.showName();
+crypto3.showSymbol();
+crypto3.showValue();
+console.log('********')
+
+// Fetching the Data through AJAX/XML
 
