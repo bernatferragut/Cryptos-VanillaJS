@@ -42,3 +42,16 @@ console.log('********')
 
 // Fetching the Data through AJAX/XML
 
+// AJAX + JSON => Cryptocompare API
+
+let url = "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=BTC,USD"
+
+let myRequest = new XMLHttpRequest();
+myRequest.open('GET',url);
+myRequest.onload = function() {
+    let myResponse = myRequest.responseText;
+    console.log(myResponse);
+}
+myRequest.send();
+
+
