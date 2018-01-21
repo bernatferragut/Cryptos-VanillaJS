@@ -1,6 +1,21 @@
 // JS
 console.log("JS Working...");
 
+// GET API DATA
+// 1. AJAX + JSON => Cryptocompare API
+// > Cryptocompare / Price  / Multi ( returns Object with Multicoin object prices )
+
+let cryptosUrl = "https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,EOS,IOT&tsyms=USD";
+
+let myRequest = new XMLHttpRequest();
+myRequest.open('GET',cryptosUrl);
+myRequest.onload = function() {
+    let myResponse = JSON.parse(myRequest.responseText);
+    console.log(myResponse.BTC.USD + ' USD');
+}
+myRequest.send();
+
+
 // Crypto Object => Crypto
 function Crypto(name, symbol, value) {
     // atributes
@@ -40,18 +55,7 @@ crypto3.showSymbol();
 crypto3.showValue();
 console.log('********')
 
-// Fetching the Data through AJAX/XML
 
-// AJAX + JSON => Cryptocompare API
 
-let url = "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=BTC,USD"
-
-let myRequest = new XMLHttpRequest();
-myRequest.open('GET',url);
-myRequest.onload = function() {
-    let myResponse = myRequest.responseText;
-    console.log(myResponse);
-}
-myRequest.send();
 
 
