@@ -25,16 +25,16 @@ function getCryptos() {
 
 // THIS IS MY OWN OBJECT
 let hodl = {
-    BAT : {amount: 6474},
-    BTC : {amount: 4.01},
-    BTG : {amount: 4.01},
-    BTS : {amount: 12500},
-    EOS : {amount: 5860},
-    IOT : {amount: 10200},
-    LTC : {amount: 20.01},
-    TRX : {amount: 6740},
-    XLM : {amount: 1260},
-    XRB : {amount: 100},
+    BAT : {amount: 10},
+    BTC : {amount: 10},
+    BTG : {amount: 10},
+    BTS : {amount: 10},
+    EOS : {amount: 10},
+    IOT : {amount: 10},
+    LTC : {amount: 10},
+    TRX : {amount: 10},
+    XLM : {amount: 10},
+    XRB : {amount: 10},
 }
 
 function renderHTML(data, hodl) {
