@@ -9,14 +9,14 @@ myButtton.addEventListener('click', getCryptos);
 // GET API DATA
 // 1. AJAX + JSON => Cryptocompare API
 // Cryptocompare/Price/Multi (returns Object + Multicoin object prices)
-let cryptosUrl = "https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,EOS,IOT&tsyms=USD";
+let cryptosUrl = "https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,LTC,XLM,EOS,IOT,BTG,XRB,BTS,BAT&tsyms=USD";
 
 function getCryptos() {
     let myRequest = new XMLHttpRequest();
     myRequest.open('GET',cryptosUrl);
     myRequest.onload = function() {
         let myResponse = JSON.parse(myRequest.responseText);
-        // console.log(myResponse.BTC.USD);
+        console.log(myResponse);
         renderHTML(myResponse);
     }
     myRequest.send();
