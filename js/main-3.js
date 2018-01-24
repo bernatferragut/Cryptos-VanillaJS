@@ -23,12 +23,6 @@ function getCryptos() {
     myRequest.send();
 }
 
-// GET API DATA
-// 1. Fetch + JSON + ES6 Literals=> Cryptocompare API
-// Cryptocompare/Price/Multi (returns Object + Multicoin object prices)
-
-
-
 // HODLS OBJECT
 let hodl = {
     BAT : {amount: 10},
@@ -123,3 +117,6 @@ function renderHTML(data, hodl) {
 
 }
 
+// GET API DATA
+// 1. Fetch + JSON + ES6 Literals=> Cryptocompare API
+// Cryptocompare/Price/Multi (returns Object + Multicoin object prices)
