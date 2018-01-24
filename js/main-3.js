@@ -18,7 +18,7 @@ function getCryptos() {
         let myResponse = JSON.parse(myRequest.responseText);
         console.log(myResponse );
         console.log(hodl);
-        renderHTML(myResponse, hodl);
+       renderHTML(myResponse, hodl); 
     }
     myRequest.send();
 }

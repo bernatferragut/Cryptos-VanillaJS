@@ -7,27 +7,32 @@ let myButtton = document.getElementById('button');
 myButtton.addEventListener('click', getCryptos);
 
 // GET API DATA
-// 1. AJAX + JSON => Cryptocompare API
+// 1. Fetch + JSON + ES6 Literals=> Cryptocompare API
 // Cryptocompare/Price/Multi (returns Object + Multicoin object prices)
 let cryptosUrl = "https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,LTC,XLM,EOS,TRX,IOT,BTG,XRB,BTS,BAT,XRB&tsyms=USD";
 
 function getCryptos() {
-    let myRequest = new XMLHttpRequest();
-    myRequest.open('GET',cryptosUrl);
-    myRequest.onload = function() {
-        let myResponse = JSON.parse(myRequest.responseText);
-        console.log(myResponse );
-        console.log(hodl);
-        renderHTML(myResponse, hodl);
+    let theResponse;
+    fetch(cryptosUrl)
+        .then(checkStatus) // this is only necessary to show the error if exists
+        .then(blob => blob.json()) // First Promise as a Blob
+        .then((res) => {
+            let theResponse = res;
+            console.log(theResponse);
+            renderHTML(theResponse, hodl);
+        }) // Second Promise as real response
+        .catch(err => console.log('There was an error', err)); // In case of Error
     }
-    myRequest.send();
+
+function checkStatus(res) {
+    if (res.ok){
+        return res;
+    }
+
+    let error = new Error(response.statusText);
+    error.response = response;
+    return Promise.reject(error);
 }
-
-// GET API DATA
-// 1. Fetch + JSON + ES6 Literals=> Cryptocompare API
-// Cryptocompare/Price/Multi (returns Object + Multicoin object prices)
-
-
 
 // HODLS OBJECT
 let hodl = {
