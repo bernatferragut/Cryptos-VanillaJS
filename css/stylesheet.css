@@ -4,5 +4,21 @@
     margin-top: 10%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
 }
+
+.grid{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    }
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    color: white;
+    background: darkorange;
+    border-radius: 4px;
+  }
+  
