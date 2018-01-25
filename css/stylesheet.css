@@ -1,6 +1,8 @@
 /* CSS */
 
-.red {
-    color: white;
-    background-color: lightgray;
+.container {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
