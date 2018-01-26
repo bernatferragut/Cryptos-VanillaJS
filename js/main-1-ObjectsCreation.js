@@ -3,14 +3,14 @@ console.log("STARTING");
 // 1. variables
 
 let person1Name = "Bernat Ferragut";
-let person1Age = 43;
+let person1Age = 99;
 function greetPerson1() {
     console.log(person1Name + "is " + person1Age + " years old");
 }
 greetPerson1();
 
 let person2Name = "Llorenc Ferragut";
-let person2Age = 36;
+let person2Age = 33;
 function greetPerson2() {
     console.log(person2Name + "is " + person2Age + " years old");  
 }
