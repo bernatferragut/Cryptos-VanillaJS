@@ -3,8 +3,8 @@ console.log("JS Ready to Rock!!!...");
 
 // Selecting Elements
 let myContainer = document.getElementById('cryptoContainer');
-let myButtton = document.getElementById('button');
-myButtton.addEventListener('click', getCryptos);
+// let myButtton = document.getElementById('button');
+// myButtton.addEventListener('click', getCryptos);
 
 // GET API DATA
 // 1. Fetch + JSON + ES6 Literals=> Cryptocompare API
@@ -51,10 +51,14 @@ function renderHTML(theResponse, hodl) {
     // BTC
     let htmlString =
     `
+    <div class="item item0">SYMBOL</div>
+    <div class="item item0">HODL AMOUNT</div>
+    <div class="item item0">MARKET PRICE</div>
+    <div class="item item0">HODL VALUE</div>
     <div class="item item1">${hodl.BAT.symbol}</div>
     <div class="item item2">${hodl.BAT.amount}</div>
-    <div class="item item3">${Math.round(theResponse.BAT.USD)}</div>
-    <div class="item item4">${hodl.BAT.amount * theResponse.BAT.USD}</div>
+    <div class="item item3">${theResponse.BAT.USD}</div>
+    <div class="item item4">${Math.round(hodl.BAT.amount * theResponse.BAT.USD)}</div>
     <div class="item item5">${hodl.BTC.symbol}</div>
     <div class="item item6">${hodl.BTC.amount}</div>
     <div class="item item7">${theResponse.BTC.USD}</div>
@@ -91,18 +95,15 @@ function renderHTML(theResponse, hodl) {
     <div class="item item38">${hodl.XRB.amount}</div>
     <div class="item item39">${theResponse.XRB.USD}</div>
     <div class="item item40">${Math.round(hodl.XRB.amount * theResponse.XRB.USD)}</div>
-    <div class="item item41">TOTAL</div>
-    <div class="item item42">---</div>
-    <div class="item item43">---</div>
-    <div class="item item44">
-    ${Math.round(hodl.BAT.amount * theResponse.BAT.USD)+Math.round(hodl.BTC.amount * theResponse.BTC.USD)+Math.round(hodl.BTG.amount * theResponse.BTG.USD)+Math.round(hodl.BTS.amount * theResponse.BTS.USD)+Math.round(hodl.EOS.amount * theResponse.EOS.USD)+Math.round(hodl.IOT.amount * theResponse.IOT.USD)+Math.round(hodl.LTC.amount * theResponse.LTC.USD)+Math.round(hodl.TRX.amount * theResponse.TRX.USD)+Math.round(hodl.XLM.amount * theResponse.XLM.USD)+Math.round(hodl.XRB.amount * theResponse.XRB.USD)}
+    <div class="item item41" id="total">TOTAL</div>
+    <div class="item item42" id="final">${Math.round(hodl.BAT.amount * theResponse.BAT.USD)+Math.round(hodl.BTC.amount * theResponse.BTC.USD)+Math.round(hodl.BTG.amount * theResponse.BTG.USD)+Math.round(hodl.BTS.amount * theResponse.BTS.USD)+Math.round(hodl.EOS.amount * theResponse.EOS.USD)+Math.round(hodl.IOT.amount * theResponse.IOT.USD)+Math.round(hodl.LTC.amount * theResponse.LTC.USD)+Math.round(hodl.TRX.amount * theResponse.TRX.USD)+Math.round(hodl.XLM.amount * theResponse.XLM.USD)+Math.round(hodl.XRB.amount * theResponse.XRB.USD)}</div>
     </div>
     `
     myContainer.insertAdjacentHTML('beforeend', htmlString);
 
 }
 
-// window.addEventListener('load', function() {
-//     console.log('window - load - bubble');
-//     getCryptos();
-//   });
+window.addEventListener('load', function() {
+    console.log('window - load - bubble');
+    getCryptos();
+  });
