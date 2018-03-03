@@ -1,6 +1,6 @@
 # Cryptos-VanillaJS
 ====================
-> Simple Crypto Wallet connected to Cryptocompare market place and calculare real time Hodl values.
+> Simple Crypto Wallet connected to Cryptocompare market place to calculate real time Hodling values.
 
 1. Modern API
 2. CSS Grid + Flexbox for data display
